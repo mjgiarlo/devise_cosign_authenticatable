@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+  - 2.0.0
+gemfile:
+  - gemfiles/devise22.gemfile
+  - gemfiles/devise30.gemfile
+notifications:
+  email:
+    recipients:
+      - "michael@psu.edu"
+    on_success: "change"
+    on_failure: "always"

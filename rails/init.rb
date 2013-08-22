@@ -1,0 +1,1 @@
+require "devise_cosign_authenticatable"
