@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe DeviseCasAuthenticatable::SingleSignOut::WardenFailureApp do
+describe DeviseCosignAuthenticatable::SingleSignOut::WardenFailureApp do
 
   describe "#redirect_url" do
 
       before do
-        Devise.cas_base_url = "http://www.example.com/cas_server"
-        @failure_app = DeviseCasAuthenticatable::SingleSignOut::WardenFailureApp.new
+        Devise.cosign_base_url = "http://www.example.com/cosign_server"
+        @failure_app = DeviseCosignAuthenticatable::SingleSignOut::WardenFailureApp.new
         @failure_app.stubs(:flash).returns({})
       end
 
@@ -17,7 +17,7 @@ describe DeviseCasAuthenticatable::SingleSignOut::WardenFailureApp do
         end
 
         it "returns the logout url" do
-          @failure_app.send(:redirect_url).should match(/#{cas_logout_url}/)
+          @failure_app.send(:redirect_url).should match(/#{cosign_logout_url}/)
         end
 
       end

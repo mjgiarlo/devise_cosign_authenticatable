@@ -6,9 +6,9 @@ if Devise::VERSION < "2.1"
 
   module Devise
     module Schema
-      # Adds the required fields for cas_authenticatable to the schema.  Currently
+      # Adds the required fields for cosign_authenticatable to the schema.  Currently
       # this is just username (String).
-      def cas_authenticatable
+      def cosign_authenticatable
         if respond_to? :apply_devise_schema
           apply_devise_schema :username, String
         else

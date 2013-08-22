@@ -1,4 +1,4 @@
-module DeviseCasAuthenticatable
+module DeviseCosignAuthenticatable
   module SingleSignOut
 
     class StoreSessionId
@@ -7,21 +7,21 @@ module DeviseCasAuthenticatable
       end
 
       def call(env)
-        store_session_id_for_cas_ticket(env)
+        store_session_id_for_cosign_ticket(env)
         @app.call(env)
       end
 
       private
 
-      def store_session_id_for_cas_ticket(env)
+      def store_session_id_for_cosign_ticket(env)
         request = Rack::Request.new(env)
         session = request.session
 
-        if session['cas_last_valid_ticket_store']
+        if session['cosign_last_valid_ticket_store']
           sid = env['rack.session.options'][:id]
-          Rails.logger.info "Storing sid #{sid} for ticket #{session['cas_last_valid_ticket']}"
-          ::DeviseCasAuthenticatable::SingleSignOut::Strategies.current_strategy.store_session_id_for_index(session['cas_last_valid_ticket'], sid)
-          session['cas_last_valid_ticket_store'] = false
+          Rails.logger.info "Storing sid #{sid} for ticket #{session['cosign_last_valid_ticket']}"
+          ::DeviseCosignAuthenticatable::SingleSignOut::Strategies.current_strategy.store_session_id_for_index(session['cosign_last_valid_ticket'], sid)
+          session['cosign_last_valid_ticket_store'] = false
         end
       end
 

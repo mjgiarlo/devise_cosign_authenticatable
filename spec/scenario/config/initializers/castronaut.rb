@@ -1,1 +1,1 @@
-Castronaut.config.connect_activerecord
+Cosigntronaut.config.connect_activerecord

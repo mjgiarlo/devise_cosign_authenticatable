@@ -1,4 +1,4 @@
-module DeviseCasAuthenticatable
+module DeviseCosignAuthenticatable
   module SingleSignOut
     module Strategies
       class RailsCache < Base
@@ -21,11 +21,11 @@ module DeviseCasAuthenticatable
           private
 
           def cache_key(session_index)
-            "devise_cas_authenticatable:#{session_index}"
+            "devise_cosign_authenticatable:#{session_index}"
           end
       end
     end
   end
 end
 
-::DeviseCasAuthenticatable::SingleSignOut::Strategies.add( :rails_cache, DeviseCasAuthenticatable::SingleSignOut::Strategies::RailsCache )
+::DeviseCosignAuthenticatable::SingleSignOut::Strategies.add( :rails_cache, DeviseCosignAuthenticatable::SingleSignOut::Strategies::RailsCache )

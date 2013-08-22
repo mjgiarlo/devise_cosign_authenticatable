@@ -24,12 +24,12 @@ class TestAdapter
       "Invalid password"
     end
     
-    Castronaut::AuthenticationResult.new(username, error_message)
+    Cosigntronaut::AuthenticationResult.new(username, error_message)
   end  
 end
 
-Castronaut::Adapters.register("test_adapter", TestAdapter)
-Castronaut.config = Castronaut::Configuration.load(File.expand_path(File.join(File.dirname(__FILE__), "castronaut.yml")))
+Cosigntronaut::Adapters.register("test_adapter", TestAdapter)
+Cosigntronaut.config = Cosigntronaut::Configuration.load(File.expand_path(File.join(File.dirname(__FILE__), "castronaut.yml")))
 
 module Scenario
   class Application < Rails::Application

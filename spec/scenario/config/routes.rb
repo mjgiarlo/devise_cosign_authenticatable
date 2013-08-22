@@ -1,8 +1,8 @@
 require 'castronaut/application'
-Castronaut::Application.set(:path, "/cas_server")
+Cosigntronaut::Application.set(:path, "/cosign_server")
 
 Scenario::Application.routes.draw do
   devise_for :users
-  mount Castronaut::Application, :at => "/cas_server"
+  mount Cosigntronaut::Application, :at => "/cosign_server"
   root :to => "home#index"
 end

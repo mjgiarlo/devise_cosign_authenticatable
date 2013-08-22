@@ -4,27 +4,27 @@ describe "routing" do
   include RSpec::Rails::RoutingExampleGroup
 
   it "routes to #service" do 
-    get("/users/service").should route_to("devise/cas_sessions#service")
+    get("/users/service").should route_to("devise/cosign_sessions#service")
   end
   
   it "routes to #new" do
-    get("/users/sign_in").should route_to("devise/cas_sessions#new")
+    get("/users/sign_in").should route_to("devise/cosign_sessions#new")
   end
   
   it "routes to #create" do
-    post("/users/sign_in").should route_to("devise/cas_sessions#create")
+    post("/users/sign_in").should route_to("devise/cosign_sessions#create")
   end
   
   it "routes to #destroy" do
-    get("/users/sign_out").should route_to("devise/cas_sessions#destroy")
+    get("/users/sign_out").should route_to("devise/cosign_sessions#destroy")
   end
   
   it "routes to #unregistered" do
-    get("/users/unregistered").should route_to("devise/cas_sessions#unregistered")
+    get("/users/unregistered").should route_to("devise/cosign_sessions#unregistered")
   end
 end
   
-describe Devise::CasSessionsController do
+describe Devise::CosignSessionsController do
   include RSpec::Rails::ControllerExampleGroup  
   
   it "should have the right route names" do

@@ -1,4 +1,4 @@
-module DeviseCasAuthenticatable
+module DeviseCosignAuthenticatable
   module SingleSignOut
     module Strategies
       class Base

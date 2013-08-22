@@ -1,6 +1,6 @@
-# Thrown when a user attempts to pass a CAS ticket that the server
+# Thrown when a user attempts to pass a CoSign ticket that the server
 # says is invalid.
-class InvalidCasTicketException < Exception
+class InvalidCosignTicketException < Exception
   attr_reader :ticket
   
   def initialize(ticket, msg=nil)

@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency 'devise', '>= 2.2.0'
-  s.add_dependency 'rubycas-client', '>= 2.2.1'
 
   s.add_development_dependency 'rails', '>= 3.2.13', '< 5.0'
   s.add_development_dependency 'rspec-rails'

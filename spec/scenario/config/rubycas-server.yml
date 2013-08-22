@@ -1,4 +1,4 @@
-url_path: /cas_server
+url_path: /cosign_server
 
 log:
     level: DEBUG

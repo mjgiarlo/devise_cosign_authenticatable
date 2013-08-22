@@ -1,4 +1,4 @@
-module DeviseCasAuthenticatable
+module DeviseCosignAuthenticatable
   module SingleSignOut
 
     def self.rails3?
@@ -10,7 +10,7 @@ module DeviseCasAuthenticatable
       def session_store_class
         @session_store_class ||=
           begin
-            if ::DeviseCasAuthenticatable::SingleSignOut.rails3?
+            if ::DeviseCosignAuthenticatable::SingleSignOut.rails3?
               # => Rails 3
               Rails.configuration.session_store
               ::Rails.application.config.session_store
@@ -56,7 +56,7 @@ module DeviseCasAuthenticatable
   end
 end
 
-require 'devise_cas_authenticatable/single_sign_out/strategies'
-require 'devise_cas_authenticatable/single_sign_out/strategies/base'
-require 'devise_cas_authenticatable/single_sign_out/strategies/rails_cache'
-require 'devise_cas_authenticatable/single_sign_out/rack'
+require 'devise_cosign_authenticatable/single_sign_out/strategies'
+require 'devise_cosign_authenticatable/single_sign_out/strategies/base'
+require 'devise_cosign_authenticatable/single_sign_out/strategies/rails_cache'
+require 'devise_cosign_authenticatable/single_sign_out/rack'

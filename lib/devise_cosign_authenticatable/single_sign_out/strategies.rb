@@ -1,18 +1,18 @@
-module DeviseCasAuthenticatable
+module DeviseCosignAuthenticatable
   module SingleSignOut
     module Strategies
       class << self
 
         # Add a strategy and store it in a hash.
         def add(label, strategy, &block)
-          strategy ||= Class.new(DeviseCasAuthenticatable::SingleSignOut::Strategies::Base)
+          strategy ||= Class.new(DeviseCosignAuthenticatable::SingleSignOut::Strategies::Base)
           strategy.class_eval(&block) if block_given?
 
           check_method(label, strategy, :store_session_id_for_index)
           check_method(label, strategy, :find_session_id_by_index)
           check_method(label, strategy, :delete_session_index)
 
-          unless strategy.ancestors.include?(DeviseCasAuthenticatable::SingleSignOut::Strategies::Base)
+          unless strategy.ancestors.include?(DeviseCosignAuthenticatable::SingleSignOut::Strategies::Base)
             raise "#{label.inspect} is not a #{base}"
           end
 
@@ -32,7 +32,7 @@ module DeviseCasAuthenticatable
         end
 
         def current_strategy
-          self[::Devise.cas_single_sign_out_mapping_strategy]
+          self[::Devise.cosign_single_sign_out_mapping_strategy]
         end
 
         # Clears all declared.
